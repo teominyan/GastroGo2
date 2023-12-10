@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Delivery Cart</title>
+  <style>
+/*     body {
+      font-family: 'Helvetica', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    } */
+
+    header {
+      background-color: #67C1E8;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+/*     section {
+      width: 80%;
+      margin: 20px auto;
+    } */
+
+    .cart-item {
+      background-color: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-item h3 {
+      color: #67C1E8;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .cart-item p {
+      color: #333;
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    .cart-item .price {
+      color: #67C1E8;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .checkout-btn {
+      display: block;
+      background-color: #67C1E8;
+      color: white;
+      padding: 10px;
+      margin: 20px auto;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Shopping Cart</h1>
+</header>
+
+<section>
+  <div class="cart-item">
+    <h3>Big Mac</h3>
+    <p>Two all-beef patties, special sauce, lettuce, cheese, pickles, onions on a sesame seed bun.</p>
+    <p class="price">$4.99</p>
+  </div>
+
+  <div class="cart-item">
+    <h3>McChicken</h3>
+    <p>Delicious chicken patty with lettuce and mayonnaise in a sesame seed bun.</p>
+    <p class="price">$3.99</p>
+  </div>
+
+  <div class="cart-item">
+    <h3>Fries</h3>
+    <p>Golden and crispy French fries served with salt.</p>
+    <p class="price">$2.49</p>
+  </div>
+
+  <!-- Add more cart items as needed -->
+
+  <p>Total (excluding delivery): <span id="subtotal">0.00</span></p>
+  <p>Delivery Charge: $3.00</p>
+  <p>Total (including delivery): <span id="total">0.00</span></p>
+
+  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+</section>
+
+<script>
+  function updateTotal() {
+    var prices = document.getElementsByClassName('price');
+    var subtotal = 0;
+
+    for (var i = 0; i < prices.length; i++) {
+      var price = parseFloat(prices[i].innerText.replace('$', ''));
+      subtotal += price;
+    }
+
+    var deliveryCharge = 3.00;
+    var total = subtotal + deliveryCharge;
+
+    document.getElementById('subtotal').innerText = subtotal.toFixed(2);
+    document.getElementById('total').innerText = total.toFixed(2);
+  }
+
+  function checkout() {
+    updateTotal();
+    alert("Checkout function: Implement your payment processing logic here!");
+    // You would typically implement the payment processing logic here,
+    // such as connecting to a payment gateway or updating a database.
+  }
+
+  // Call updateTotal on page load
+  updateTotal();
+</script>
+
+</body>
+</html>

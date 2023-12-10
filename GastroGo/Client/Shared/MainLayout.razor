@@ -1,0 +1,186 @@
+﻿@inherits LayoutComponentBase
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Delivery App</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background-color: #67C1E8;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #67C1E8;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-top: 15px; /* Adjusted margin-top */
+        }
+
+        .search {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
+        }
+
+            .search-box input {
+                padding: 15px 20px;
+                border: 1px solid #ddd;
+                border-radius: 5px 0 0 5px; /* Rounded corners on the left */
+                width: auto;
+                min-width: 100px; /* Set a minimum width if needed */
+                box-sizing: border-box; /* Add box-sizing */
+                vertical-align: top; /* Adjusted property */
+            }
+
+            .search-box button {
+                padding: 15px 20px; /* Adjusted padding */
+                background-color: #67C1E8;
+                color: #fff;
+                border: 1px solid #ddd;
+                border-radius: 0 5px 5px 0; /* Rounded corners on the right */
+                font-size: 20px;
+                cursor: pointer;
+                box-sizing: border-box; /* Add box-sizing */
+                vertical-align: top; /* Adjusted property */
+            }
+
+        .logout-button, .login-button, .register-button {
+            background-color: #51B8E5;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        footer {
+            background-color: #67C1E8;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Gastro Food Delivery </h1>
+        <p>Order your favorite food online and have it delivered to your doorstep!</p>
+
+
+        <button onclick="redirectToLoginPage()" class="login-button">Login</button>
+        <button onclick="redirectToRegisterPage()" class="register-button">Register</button>
+
+
+    </header>
+
+    <section class="search">
+        <div class="search-box">
+            <input type="text" id="search" name="search" placeholder="address">
+            <button type="button" class="cta-button">&#128269;</button> <!-- Magnifying glass icon -->
+
+
+        </div>
+    </section>
+
+    <section>
+        <h2>Why Choose Us?</h2>
+        <p>Discover the convenience of ordering food with our website. We offer a wide range of cuisines from top restaurants in your area. Whether you're craving pizza, sushi, or something else – we've got you covered!</p>
+    </section>
+
+    <section>
+        <h2> How Do I Place An Order</h2>
+        <p>Step 1 : Enter your address</p>
+        <p>Step 2 : Browse through the range of cuisine in your area</p>
+        <p>Step 3 : Select what you want and order</p>
+        <p>Step 4 : Wait for your food to arrive at your doorstep</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Food Delivery App. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function redirectToLoginPage() {
+            window.location.href = 'login.html';
+
+        }
+
+        function redirectToRegisterPage() {
+            window.location.href = 'registerpage.html';
+        }
+
+        function button() {
+            window.location.href = 'browsingPageWhenUserIsLoggedIn.html';
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the search button element
+            var searchButton = document.querySelector('.cta-button');
+
+            // Add a click event listener to the search button
+            searchButton.addEventListener('click', function () {
+                // Get the value of the search input
+                var searchInput = document.getElementById('search').value;
+
+                // Construct the redirect URL (change 'i.html' to the desired destination)
+                var redirectUrl = 'browsingPageWhenUserIsLoggedIn.razor';
+
+                // Redirect to the constructed URL
+                window.location.href = redirectUrl;
+            });
+        });
+
+    </script>
+</body>
+
+</html>
+
+
+

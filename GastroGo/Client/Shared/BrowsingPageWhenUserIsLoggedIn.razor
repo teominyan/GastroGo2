@@ -1,0 +1,185 @@
+﻿
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .logout-button {
+            background-color: #67C1E8;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .search-container {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 4px;
+            background-color: #67C1E8;
+        }
+
+        .search-bar {
+            width: 400px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-button {
+            background-color: #67C1E8;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .favorite-cuisine {
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .cuisine-box {
+            width: 100px;
+            height: 100px;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .restaurant-section {
+            text-align: center; /* Center the restaurant sections */
+            margin: 20px;
+        }
+
+        .restaurant-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .restaurant-item {
+            margin-bottom: 10px;
+        }
+
+        .rating-text {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .logo-box {
+            width: 100px;
+            height: 100px;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="redirectToLogoutPage()" class="logout-button">Logout</button>
+
+    <div class="search-container">
+        <h1> Gastro Food delivery</h1>
+        <h2> Address(postal) </h2>
+        <form action="search-results.html" method="GET">
+            <input type="text" class="search-bar" name="search" placeholder="Search for a restaurant...">
+            <button type="submit" class="search-button">Search</button>
+        </form>
+    </div>
+
+    <div class="favorite-cuisine">
+        <div class="cuisine-box">
+            <h3>Italian
+				<img src="italian.jpg" width="100" height="70" >
+			</h3>
+        </div>
+        <div class="cuisine-box">
+            <h3>Indian
+				<img src="indian.jpg" width="100" height="70" >
+			</h3>
+        </div>
+        <div class="cuisine-box">
+            <h3>Chinese
+				<img src="chi.jpg" width="100" height="70" >
+			</h3>
+        </div>
+        <div class="cuisine-box">
+            <h3>Japanese
+				<img src="jap.jpg" width="100" height="70" >
+			</h3>
+        </div>
+        <!-- Add more cuisine boxes as needed -->
+    </div>
+
+    <div class="restaurant-section">
+        <h2>Italian Restaurants</h2>
+        <ul class="restaurant-list">
+            <li class="restaurant-item">pastaria</li>
+            <p class="rating-text">Rating: 4.5</p>
+            <div class="logo-box">
+                <img src="pasta.jpg" width="100" height="100" >
+            </div>
+			<li></li>
+            <li class="restaurant-item">autentic pizza</li>
+            <p class="rating-text">Rating: 4.2</p>
+            <div class="logo-box">
+                <img src="pizza.png" width="100" height="100" >
+            </div>
+            <!-- Add more Italian restaurants as needed -->
+        </ul>
+    </div>
+
+    <!-- Add more restaurant sections as needed -->
+
+    <script>
+        function redirectToLogoutPage() {
+            window.location.href = 'browsingPageWhenUserIsLoggedOut.html';
+        }
+    </script>
+
+</body>
+
+</html>
+

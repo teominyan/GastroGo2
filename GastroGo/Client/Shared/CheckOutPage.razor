@@ -1,0 +1,142 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <style>
+    body {
+      font-family: 'Helvetica', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    header {
+      background-color: #67C1E8;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    section {
+      width: 80%;
+      margin: 20px auto;
+    }
+
+    .checkout-form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .payment-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .card-option,
+    .add-card-option,
+    .apple-pay-option {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .card-option:hover,
+    .add-card-option:hover,
+    .apple-pay-option:hover {
+      background-color: #f2f2f2;
+    }
+
+    .saved-cards {
+      margin-top: 20px;
+    }
+
+    .saved-card {
+      background-color: #f2f2f2;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+
+    .checkout-btn {
+      display: block;
+      background-color: #67C1E8;
+      color: white;
+      padding: 10px;
+      margin-top: 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .checkout-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Checkout</h1>
+</header>
+
+<section>
+  <div class="checkout-form">
+
+    <div class="payment-options">
+      <div class="card-option" onclick="selectPaymentOption('card')">Use Saved Card</div>
+      <div class="add-card-option" onclick="addCard()">Add New Card</div>
+    </div>
+
+    <div class="saved-cards" id="savedCards">
+      <!-- Saved card info will be displayed here -->
+    </div>
+
+    <button class="checkout-btn" onclick="checkout()">Complete Purchase</button>
+  </div>
+</section>
+
+<script>
+  function selectPaymentOption(option) {
+    alert(`Selected Payment Option: ${option}`);
+  }
+
+  function addCard() {
+    // This is a placeholder function, in a real-world scenario, you'd handle this securely on the server
+    const savedCards = document.getElementById('savedCards');
+
+    // Mock credit card info (don't use real credit card details!)
+    const cardInfo = {
+      cardNumber: '**** **** **** 1234',
+      cardHolder: 'John Doe',
+      expirationDate: '12/24',
+    };
+
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('saved-card');
+    cardElement.innerHTML = `
+      <p>Card Number: ${cardInfo.cardNumber}</p>
+      <p>Card Holder: ${cardInfo.cardHolder}</p>
+      <p>Expiration Date: ${cardInfo.expirationDate}</p>
+    `;
+
+    savedCards.appendChild(cardElement);
+  }
+
+  function checkout() {
+    alert("Checkout function: Implement your payment processing logic here!");
+  }
+</script>
+
+</body>
+</html>
+
